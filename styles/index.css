@@ -219,10 +219,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 100vw;
     height: 100vh;
 }
 
 #header_1 {
+    padding-inline: (5px, 5%, 20vw);
     font-family: sans-serif;
     font-weight: 900;
     font-size: clamp(5vw, 10vh, 100vw);

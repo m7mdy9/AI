@@ -18,7 +18,7 @@ function adjustLayout() {
     if (isPortrait || isSmallScreen) {
       aiDefText.style.width = "100%";
       aiDefImgDiv.style.width = "100%";
-      aiDefImg.style.transform = "translateY(0px)";
+      aiDefImg.style.transform = "translateY(-10vh)";
       aiDefImg.style.paddingRight = "0";
       aiDefDiv.style.flexWrap = "wrap";
       aiDefDiv.style.justifyContent = "center";
