@@ -341,15 +341,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentScrollbarInstance) {
             if (isTouchDevice()) {
                 destroySmoothScrollbar(currentScrollbarInstance);
-                setupAnimations(null); // Reinitialize animations with native scrolling
                 scrollbarInstance = null
+                setupAnimations(scrollbarInstance); // Reinitialize animations with native scrolling
             }
-        } else {
-            if (!isTouchDevice() && window.innerWidth >= 768) {
+        } else if (!isTouchDevice() && window.innerWidth >= 768) {
                 scrollbarInstance = initializeSmoothScrollbar();
                 setupAnimations(scrollbarInstance); // Reinitialize animations with Smooth Scrollbar
-            }
-            
+        } else {
+            setupAnimations(scrollbarInstance)
         }
     const nvidia_span = document.querySelectorAll("#ai_span_nv");
     const nvidia_span1 = document.querySelectorAll("#ai_span_nv_main");
