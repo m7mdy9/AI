@@ -81,17 +81,11 @@ html {
     font-size: 1vh;
 }
 html, body {
-    overflow: hidden;
     background-color: #131313;
 }
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-#scroll-wrapper {
-    max-width: 100vw;
-    box-sizing: border-box;
 }
 * {
     color: white
@@ -101,7 +95,7 @@ body {
     max-width: 100vw;
     height: 100vh;
     overflow: hidden;
-}
+    max-width: 100vw;}
 .header_div {
     max-width: 100vw;
     min-height: 100vh;
@@ -111,17 +105,17 @@ body {
 }
 #scroll_prompt {
     position: absolute;
-    bottom: 7.2rem;
+    bottom: 3.25em;
     left: 50%;
     transform: translateX(-50%);
     color: #fff;
     font-family: 'Inter';
     letter-spacing: 1px;
     font-weight: 800;
-    font-size: 3vh;
+    font-size: 3rem;
     background: #42424288;
-    border-radius: 20px;
-    padding: 10px 20px;
+    border-radius: 1.2em;
+    padding: 0.5em 1em;
     text-wrap-mode: nowrap;
     opacity: 0;
     pointer-events: none;
