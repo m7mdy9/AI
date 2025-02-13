@@ -5,6 +5,7 @@
 // Define a function that applies the desired styles based on screen dimensions/orientation
 function adjustLayout() {
     // Get references to your elements
+    const html = document.querySelector('html')
     const aiDefText = document.querySelector('#ai_def_text');
     const aiDefHead = document.querySelector('#ai_def_head');
     const aiDefImgDiv = document.querySelector('#ai_def_img_div');
@@ -12,26 +13,30 @@ function adjustLayout() {
     const aiDefP = document.querySelector('#ai_def_p');
     const aiDefDiv = document.querySelector('.ai_def_div');
   
-    const isPortrait = window.innerWidth < window.innerHeight;
-    const isSmallScreen = window.innerWidth <= 1024;
-    console.log(isSmallScreen, aiDefImg)
-    if (isPortrait || isSmallScreen) {
-      aiDefText.style.width = "100%";
-      aiDefImgDiv.style.width = "100%";
-      aiDefImg.style.transform = "translateY(-10vh)";
-      aiDefImg.style.paddingRight = "0";
-      aiDefDiv.style.flexWrap = "wrap";
-      aiDefDiv.style.justifyContent = "center";
-      aiDefText.style.maxWidth = "100vw"
-      aiDefP.style.paddingRight = "7.5%"
-      aiDefP.style.paddingLeft = "7.5%"
-      aiDefHead.style.paddingRight = "5%"
-      aiDefHead.style.paddingLeft = "5%"
-      aiDefDiv.style.paddingLeft = "0%"
-      aiDefImgDiv.style.paddingRight = "5%"
-      aiDefImgDiv.style.paddingLeft = "5%"
-      aiDefImgDiv.style.minHeight = "50vw"
-
+    const ratio =  parseFloat(window.innerWidth / window.innerHeight).toFixed(5)
+    const wide_ratio = ratio >= 3
+    const isPortrait = ratio < 1;
+    const small_display = window.innerWidth <= 1024
+    const mid_ratio = ratio <= 0.85 && ratio >= 0.60
+    const small_ratio = ratio < 0.60;
+    console.log(ratio)
+    if (isPortrait || small_display) {
+        aiDefText.style.width = "100%";
+        aiDefImgDiv.style.width = "100%";
+        aiDefImg.style.transform = "translateY(-10rem)";
+        aiDefImg.style.paddingRight = "0";
+        aiDefDiv.style.flexWrap = "wrap";
+        aiDefDiv.style.justifyContent = "center";
+        aiDefText.style.maxWidth = "100vw"
+        aiDefP.style.paddingRight = "7.5%"
+        aiDefP.style.paddingLeft = "7.5%"
+        aiDefHead.style.paddingRight = "5%"
+        aiDefHead.style.paddingLeft = "5%"
+        aiDefDiv.style.paddingLeft = "0%"
+        aiDefImgDiv.style.paddingRight = "5%"
+        aiDefImgDiv.style.paddingLeft = "5%"
+        aiDefImgDiv.style.minHeight = "50vw"
+        
     } else {
         aiDefText.style.width = "";
         aiDefImgDiv.style.width = "";
@@ -53,6 +58,16 @@ function adjustLayout() {
         aiDefImgDiv.style.minHeight = ""
 
     }
+    if (mid_ratio) {
+        html.style.fontSize = '0.75vh'
+    } else if(small_ratio) {
+        html.style.fontSize = '0.6vh'
+    } else if(wide_ratio) {
+        html.style.fontSize = '1.25vh'
+    } else {
+        html.style.fontSize = '1vh'
+    }
+
 }
   
 document.addEventListener('DOMContentLoaded', () => {

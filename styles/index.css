@@ -77,6 +77,9 @@
  THIS CODE IS MADE BY MOHAMED ELENANY (M7MDY9) AND IS NOT AUTHORIZED TO BE USED WITHOUT HIS PERMISSION. 
  FOR MORE INFO VIEW LICENSE FILE - 2025 © MOHAMED ELENANY
 */
+html {
+    font-size: 1vh;
+}
 html, body {
     overflow: hidden;
     background-color: #131313;
@@ -108,7 +111,7 @@ body {
 }
 #scroll_prompt {
     position: absolute;
-    bottom: 7.2vh;
+    bottom: 7.2rem;
     left: 50%;
     transform: translateX(-50%);
     color: #fff;
@@ -149,9 +152,10 @@ body {
 }
 #ai_def_head{
     transform: translateY(-20.5px);
+    text-wrap-mode: wrap;
     font-family: "Roboto";
     font-weight: 800;
-    font-size: 4.5vh;
+    font-size: 4.5rem;
 }
 #AI_span_head {
     font-weight: 800;
@@ -173,6 +177,7 @@ body {
 #ai_span_human {
     font-weight: 800;
     color: #51ee66;
+    white-space: nowrap;
 }
 #ai_span_learn {
     font-weight: 800;
@@ -199,7 +204,7 @@ body {
     transform: translateY(-20.5px);
     font-family: "Inter", sans-serif;
     font-weight: 500;
-    font-size: 3vh;
+    font-size: 3rem;
 }
 
 #ai_def_img_div {
@@ -224,10 +229,10 @@ body {
 }
 
 #header_1 {
-    padding-inline: (5px, 5%, 20vw);
+    padding-inline: 10px;
     font-family: sans-serif;
     font-weight: 900;
-    font-size: clamp(5vw, 10vh, 100vw);
+    font-size: 10rem;
     color: whitesmoke;
     text-align: center;
     opacity: 0;
@@ -237,7 +242,7 @@ body {
 #small_header{
     font-family: sans-serif;
     font-weight: 800;
-    font-size: 3vh;
+    font-size: 3rem;
     color: whitesmoke;
     text-align: center;
     opacity: 0;
@@ -255,7 +260,7 @@ body {
     padding-inline: 5%;
     font-family: "Inter";
     font-weight: 700;
-    font-size: 7vh;
+    font-size: 7rem;
 }
 #NVIDIA_text {
     padding-inline: 10%;
@@ -263,7 +268,7 @@ body {
     color: #dbdbdb;
     font-family: "Inter", sans-serif;
     font-weight: 500;
-    font-size: 3.2vh;
+    font-size: 3.2rem;
     width: 70vw;
 }
 #NVIDIA_3D_header {
@@ -272,7 +277,7 @@ body {
     color: white;
     font-family: "Inter";
     font-weight: 700;
-    font-size: 7.5vh;
+    font-size: 7.5rem;
 }
 /*
  THIS CODE IS MADE BY MOHAMED ELENANY (M7MDY9) AND IS NOT AUTHORIZED TO BE USED WITHOUT HIS PERMISSION. 
