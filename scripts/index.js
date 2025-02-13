@@ -15,8 +15,9 @@ function adjustLayout() {
     const wide_ratio = ratio >= 3
     const isPortrait = ratio < 1;
     const small_display = window.innerWidth <= 1024
-    const mid_ratio = ratio <= 0.85 && ratio >= 0.60
-    const small_ratio = ratio < 0.60;
+    const mid_ratio = ratio <= 0.85 && ratio >= 0.70;
+    const mid_small_ratio = ratio < 0.70 && ratio >= 0.575
+    const small_ratio = ratio < 0.575;
     console.log(ratio)
     if (isPortrait || small_display) {
         aiDefText.style.width = "100%";
@@ -57,9 +58,11 @@ function adjustLayout() {
 
     }
     if (mid_ratio) {
-        html.style.fontSize = '0.75vh'
+        html.style.fontSize = '0.725vh'
+    } else if(mid_small_ratio) {
+        html.style.fontSize = '0.625vh'
     } else if(small_ratio) {
-        html.style.fontSize = '0.6vh'
+        html.style.fontSize = '0.55vh'
     } else if(wide_ratio) {
         html.style.fontSize = '1.25vh'
     } else {
