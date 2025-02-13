@@ -17,7 +17,8 @@ function adjustLayout() {
     const small_display = window.innerWidth <= 1024
     const mid_ratio = ratio <= 0.85 && ratio >= 0.70;
     const mid_small_ratio = ratio < 0.70 && ratio >= 0.51
-    const small_ratio = ratio < 0.51;
+    const small_ratio = ratio < 0.51 && ratio > 0.425
+    const tiny_ratio = ratio <= 0.425;
     console.log(ratio)
     if (isPortrait || small_display) {
         aiDefText.style.width = "100%";
@@ -32,6 +33,7 @@ function adjustLayout() {
         aiDefHead.style.paddingRight = "5%"
         aiDefHead.style.paddingLeft = "5%"
         aiDefDiv.style.paddingLeft = "0%"
+        aiDefImgDiv.style.maxWidth = "100vw"
         aiDefImgDiv.style.paddingRight = "5%"
         aiDefImgDiv.style.paddingLeft = "5%"
         aiDefImgDiv.style.minHeight = "50vw"
@@ -50,6 +52,7 @@ function adjustLayout() {
         aiDefHead.style.paddingRight = ""
         aiDefHead.style.paddingLeft = ""
         aiDefDiv.style.paddingLeft = ""
+        aiDefImgDiv.style.maxWidth = ""
         aiDefHead.style.paddingRight = ""
         aiDefHead.style.paddingLeft = ""
         aiDefImgDiv.style.paddingRight = ""
@@ -58,11 +61,14 @@ function adjustLayout() {
 
     }
     if (mid_ratio) {
-        html.style.fontSize = '0.8vh'
+        html.style.fontSize = '0.85vh'
     } else if(mid_small_ratio) {
-        html.style.fontSize = '0.7vh'
+        html.style.fontSize = '0.75vh'
     } else if(small_ratio) {
-        html.style.fontSize = '0.6vh'
+        html.style.fontSize = '0.65vh'
+    } else if (tiny_ratio) {
+        html.style.fontSize = '0.55vh'
+        
     } else if(wide_ratio) {
         html.style.fontSize = '1.25vh'
     } else {
@@ -102,7 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
             overscroll: {
                 effect: 'bounce',
                 maxOverscroll: 150,
-            }
+                
+            },
         },
     });
     gsap.fromTo("#header_1",
