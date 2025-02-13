@@ -2,9 +2,7 @@
  THIS CODE IS MADE BY MOHAMED ELENANY (M7MDY9) AND IS NOT AUTHORIZED TO BE USED WITHOUT HIS PERMISSION. 
  FOR MORE INFO VIEW LICENSE FILE - 2025 © MOHAMED ELENANY
 */
-// Define a function that applies the desired styles based on screen dimensions/orientation
 function adjustLayout() {
-    // Get references to your elements
     const html = document.querySelector('html')
     const aiDefText = document.querySelector('#ai_def_text');
     const aiDefHead = document.querySelector('#ai_def_head');
