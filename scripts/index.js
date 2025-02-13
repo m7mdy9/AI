@@ -58,11 +58,11 @@ function adjustLayout() {
 
     }
     if (mid_ratio) {
-        html.style.fontSize = '0.725vh'
+        html.style.fontSize = '0.8vh'
     } else if(mid_small_ratio) {
-        html.style.fontSize = '0.625vh'
+        html.style.fontSize = '0.7vh'
     } else if(small_ratio) {
-        html.style.fontSize = '0.55vh'
+        html.style.fontSize = '0.6vh'
     } else if(wide_ratio) {
         html.style.fontSize = '1.25vh'
     } else {
