@@ -16,8 +16,8 @@ function adjustLayout() {
     const isPortrait = ratio < 1;
     const small_display = window.innerWidth <= 1024
     const mid_ratio = ratio <= 0.85 && ratio >= 0.70;
-    const mid_small_ratio = ratio < 0.70 && ratio >= 0.575
-    const small_ratio = ratio < 0.575;
+    const mid_small_ratio = ratio < 0.70 && ratio >= 0.51
+    const small_ratio = ratio < 0.51;
     console.log(ratio)
     if (isPortrait || small_display) {
         aiDefText.style.width = "100%";
