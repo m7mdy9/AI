@@ -7,9 +7,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="m7mdy9">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="plugins/locomotive-scroll.min.css">
         <link rel="stylesheet" href="./styles/index.css">
         <link rel="icon" type="image/png" href="./media/ai_icon.png">
         <title>
@@ -17,7 +19,7 @@
         </title>
     </head>
     <body>
-        <div id="smooth-wrapper" >
+        <div class="data-scroll-container" data-scroll-container >
             <div class="header_div">
 
                 <header class="header" >
@@ -31,20 +33,20 @@
             <div class="ai_def_div">
                 <div id="ai_def_text">
                     <h2 id="ai_def_head">
-                        <span id="AI_span_head">Artificial Intelligence (AI)</span> is a revolutionary field of <span id="ai_span_learn">computer science</span> that allows machines to perform tasks requiring <span id="ai_span_human">human-like</span> intelligence.
+                        <span class="AI_span_head">Artificial Intelligence (AI)</span> is a revolutionary field of <span class="ai_span_learn">computer science</span> that allows machines to perform tasks requiring <span class="ai_span_human">human-like</span> intelligence.
                     </h2>
                     <p id="ai_def_p">
-                        Examples of these are: <span id="ai_span_weight_1">learning</span>, <span id="ai_span_weight_1">reasoning</span>, and <span id="ai_span_weight_1">decision-making</span>.
-                        By the usage of advanced algorithms and vast datasets, <span id="AI_span">AI systems</span> can <span id="ai_span_weight_1">identify patterns</span>, <span id="ai_span_weight_1">make predictions</span>, and <span id="ai_span_weight_1">improve over time</span> through <span id="ai_span_m_learn">machine&nbsp;learning</span> and <span id="ai_span_d_learn">deep&nbsp;learning</span>.
-                        One of the reason's of <span id="AI_span">AI's</span> success is it's specialized hardware, particularly <span id="ai_span_nv_main">NVIDIA's</span> cutting-edge chips.
-                        Originally designed for graphics rendering, <span id="ai_span_nv">NVIDIA's GPUs</span> have evolved into powerful <span id="AI_span">AI accelerators</span>, with innovations like <span id="ai_span_tensor">Tensor Core technology</span> crossing it's boundaries in various fields. 
-                        These chips power applications ranging from <span id="ai_span_cv">computer vision</span> to <span id="ai_span_ntp">natural language processing</span>, enabling advancements in <span id="ai_span_weight_1">self-driving cars, </span><span id="ai_span_weight_1">virtual assistants</span>, and <span id="ai_span_weight_1">more</span>.
-                        The seamless integration of software and hardware continues to expand <span id="AI_span">AI's capabilities</span>, making it an integral part of everyday life. 
-                        As technology advances, <span id="ai_span_nv">NVIDIA's AI chips</span> and <span id="ai_span_weight_1">other high-performance computing tools</span> will remain critical in unlocking AI's full potential, and improving it further.
+                        Examples of these are: <span class="ai_span_weight_1">learning</span>, <span class="ai_span_weight_1">reasoning</span>, and <span class="ai_span_weight_1">decision-making</span>.
+                        By the usage of advanced algorithms and vast datasets, <span class="AI_span">AI systems</span> can <span class="ai_span_weight_1">identify patterns</span>, <span class="ai_span_weight_1">make predictions</span>, and <span class="ai_span_weight_1">improve over time</span> through <span class="ai_span_m_learn">machine&nbsp;learning</span> and <span class="ai_span_d_learn">deep&nbsp;learning</span>.
+                        One of the reason's of <span class="AI_span">AI's</span> success is it's specialized hardware, particularly <span class="ai_span_nv_main">NVIDIA's</span> cutting-edge chips.
+                        Originally designed for graphics rendering, <span class="ai_span_nv">NVIDIA's GPUs</span> have evolved into <span class="AI_span">powerful AI accelerators</span>, with innovations like <span class="ai_span_tensor">Tensor Core technology</span> crossing it's boundaries in various fields. 
+                        These chips power applications ranging from <span class="ai_span_cv">computer vision</span> to <span class="ai_span_ntp">natural language processing</span>, enabling advancements in <span class="ai_span_weight_1">self-driving cars, </span><span class="ai_span_weight_1">virtual assistants</span>, and more.
+                        The seamless integration of software and hardware continues to expand AI's capabilities, making it an integral part of everyday life. 
+                        As technology advances, <span class="ai_span_nv">NVIDIA's AI chips</span> and other high-performance computing tools will remain critical in unlocking AI's full potential, and improving it further.
                     </p>
                 </div>
                 <div id="ai_def_img_div">
-                    <img id="ai_def_img"src="./media/weird_ai_picture_for_header.avif" alt="Artificial Intelligence" title="Artificial Intelligence">
+                    <img id="ai_def_img" src="./media/weird_ai_picture_for_header.avif" alt="Artificial Intelligence" title="Artificial Intelligence">
                 </div>
 <!--
  THIS CODE IS MADE BY MOHAMED ELENANY (M7MDY9) AND IS NOT AUTHORIZED TO BE USED WITHOUT HIS PERMISSION. 
@@ -53,24 +55,68 @@
                 </div>
             <div class="NVIDIA">
                 <div id="NVIDIA_head">
-                    <h3 id="NVIDIA_header">We mentioned <span id="nv_span_main">NVIDIA's GPUs</span> earlier, let's dive deeper into what <span id="light_red">they actually are.</span></h3>
+                    <h3 id="NVIDIA_header">We mentioned <span class="nv_span_main">NVIDIA's GPUs</span> earlier, let's dive deeper into what <span class="light_red">they actually are.</span></h3>
                         <p id="NVIDIA_text">
-                            A <span id="ai_span_weight_1">GPU</span>, short for <span id="ai_span_weight_1">Graphics Processing Unit</span>, is a specialized processor designed to handle complex graphical computations and rendering tasks. 
-                            Unlike <span id="ai_span_weight_1" title="Central Processing Units.">CPUs</span>, GPUs excel at performing parallel operations, making them ideal for processing large datasets simultaneously. 
-                            They are widely used in <span id="ai_span_weight_1">gaming</span>, <span id="ai_span_weight_1">video editing</span>, and <span id="ai_span_weight_1">AI applications</span> due to their ability to accelerate tasks like image rendering and machine learning.
-                            As mentioned earlier, <span id="ai_span_weight_1">GPUs</span> are essential for AI's processing as they provide <span id="ai_span_weight_1">extreme speeds</span> for processing large sums of data.
+                            A <span class="ai_span_weight_1">GPU</span>, short for <span class="ai_span_weight_1">Graphics Processing Unit</span>, is a specialized processor designed to handle complex graphical computations and rendering tasks. 
+                            Unlike <span class="ai_span_weight_1" title="Central Processing Units.">CPUs</span>, <span class="ai_span_weight_1">GPUs</span> excel at performing parallel operations, making them ideal for processing large datasets simultaneously. 
+                            They are widely used in <span class="ai_span_weight_1">gaming</span>, <span class="ai_span_weight_1">video editing</span>, and <span class="ai_span_weight_1">AI applications</span> due to their ability to accelerate tasks like image rendering and machine learning.
+                            As mentioned earlier, <span class="ai_span_weight_1">GPUs</span> are essential for AI's processing as they provide <span class="ai_span_weight_1">extreme speeds</span> for processing large sums of data.
                         </p>
                 </div>
-                <div id="NVIDIA_3D_div">
-                    <h2 id="NVIDIA_3D_header"> Let's take a look <span style="color: rgb(206, 206, 206)">inside</span> one of <span id="nv_span_main">NVIDIA's GPUs</span>,<br><span id="light_red">RTX&nbsp;3080.</span></h2>
+                <div id="NVIDIA_3D_div" >
+                    <h2 id="NVIDIA_3D_header"> Let's take a look <span style="color: rgb(206, 206, 206)">inside</span> one of <span class="nv_span_main">NVIDIA's GPUs</span>, <span class="light_red">RTX&nbsp;3080.</span></h2>
+                    <div class="model_switch">
+                        <span id="toggle_text">3D Animations toggle</span><br>
+                            <input type="checkbox" id="toggle" class="hidden-checkbox">
+                            <label for="toggle" class="switch">
+                            <span class="slider"></span>
+                            </label>
+                    </div>
+                    <div class="NVIDIA_no_anims">
+                        <div class="models_no_anims">
+                            <p class="no_anims_header">
+                                This is the RTX 3080 MSI
+                            </p>
+                            <img id="small_img" src="./media/alt/3080_1.png" alt="RTX 3080 MSI">
+                        </div>
+                        <div class="models_no_anims">
+                            <p class="no_anims_header">
+                                These are the cooling fans, responsible for cooling the GPU by bringing the hot air out, as the GPU generates heat when being used, and depending on the usage it can get really hot quickly.
+                            </p>
+                            <img class="no_anims_img" src="./media/alt/3080_2.png" alt="Cooling fans">
+                        </div>
+                        <div class="models_no_anims">
+                            <p class="no_anims_header">
+                                This is the heatsink, which is typically made of aluminum, it's purpose is to transfer the heat from plates on the back that touch the 'hot spots'. This heat then gets transferred through the plates and is blown away by fans.
+                            </p>
+                            <img class="no_anims_img" src="./media/alt/3080_3.png" alt="Heatsink">
+                        </div>
+                        <div class="models_no_anims">
+                            <p class="no_anims_header">
+                                Lastly, the die. The die is the chip that provides the base for everything else to run. Surrounding it are VRAM modules, which store memory so the die can get quick access to the data it needs.
+                            </p>
+                            <img class="no_anims_img" src="./media/alt/3080_4.png" alt="Chipset">
+                        </div>
+                    </div>
+                    <div id="NVIDIA_3D_model" data-scroll>
+                        <div id="videoSection" data-scroll data-scroll-sticky data-scroll-target="#NVIDIA_3D_model">
+                            <p id="changing">
+                                This is the RTX 3080 MSI.
+                            </p>
+                            <video id="aiBreakdown" src="media/AIBreakdown3.mp4" muted preload="auto"></video>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div id="small_break"></div> -->
+                <div id="after_3d">
+                    <img src="media/weird_ai_picture_for_header.avif" alt="yes">
                 </div>
             </div>
         </div>
         <script src="./plugins/gsap.min.js"></script>
         <script src="./plugins/ScrollToPlugin.min.js"></script> 
         <script src="./plugins/ScrollTrigger.min.js"></script>       
-        <script src="./plugins/smooth-scrollbar.js"></script>
-        <script src="./plugins/overscroll.js"></script>
+        <script src="./plugins/locomotive-scroll.min.js"></script>
         <script src="./scripts/index.js"></script>
     </body>
 </html>
