@@ -1,4 +1,4 @@
-# AI Web site.
+# AI Web site
 
 ## License
 
