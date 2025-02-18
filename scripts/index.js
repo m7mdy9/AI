@@ -80,6 +80,8 @@ function adjustLayout() {
     const N_3D_Div_2 = document.querySelector("#NVIDIA_3D_div")
     const models_no_anims = document.querySelectorAll(".models_no_anims")
     const models_no_anims_1 = document.querySelector(".models_no_anims")
+    const card = document.querySelectorAll('.card')
+    const container = document.querySelector('.container')
     // const noAnimImg = document.querySelector(".no_anims_img")
 
 
@@ -110,20 +112,32 @@ function adjustLayout() {
         aiDefImgDiv.style.paddingLeft = "5%";
         aiDefImgDiv.style.minHeight = "50vw";
         N_no_anims.style.width = "95vw"
-        N_3D_Div_2.style.minHeight = `${537-(425/1.5)}vh`
+        N_3D_Div_2.style.height = `${537-(425/1.5)}vh`
         models_no_anims.forEach(el =>{
             el.style.height = "60vh"
         })
         models_no_anims_1.style.height = "40vh"
+        card.forEach(el => {
+            el.style.width = "100%"
+            el.style.left = "0"
+            el.style.marginTop = "5vh"
+        })
+        container.style.gap = "0";
+        container.style.display = 'block';
         // noAnimImg.style.paddingTop = "7vh"
     } else {
-        [aiDefText, aiDefImgDiv, aiDefImg, aiDefDiv, aiDefP, aiDefHead].forEach(el => {
+        [aiDefText, aiDefImgDiv, aiDefImg, aiDefDiv, aiDefP, aiDefHead, container].forEach(el => {
             el.style = '';
         });
-        N_3D_Div.style.minHeight = ``
+        N_3D_Div.style.height = ``
         N_no_anims.style.width = ""
         models_no_anims.forEach(el =>{
             el.style.height = ""
+        })
+        card.forEach(el => {
+            el.style.width = ""
+            el.style.left = ""
+            el.style.marginTop = ""
         })
         models_no_anims_1.style.height = ""
     }
@@ -167,6 +181,9 @@ function initLocoScroll() {
         },
         lerp: 0.125,
         multiplier: 0.8,
+        getDirection: true,
+        debug: true, // Visualize boundaries
+
     });
 
     ScrollTrigger.scrollerProxy('[data-scroll-container]', {

@@ -78,11 +78,12 @@ html {
     scroll-behavior: auto !important;
 }
 html, body {
+    margin: 0;
     width: 100vw;
     height: 100vh;
     background-color: #0c0c0c;
 }
-body {
+body, html {
     margin: 0;
     padding: 0;
 }
@@ -395,9 +396,143 @@ transform: translateY(-50%) translateX(9.4vh)
 .hidden-checkbox {
 display: none;
 }
-#after_3d {
-    background: linear-gradient(to bottom, #000, #0c0c0c 5%);
+/* #after_3d {
+
+} */
+.container {
     padding-top: 10vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-inline: 2vw;
+    position: relative;
+}
+.ai_evo_container {
+    background: linear-gradient(to bottom, #000, #0c0c0c 2.5%);
+    padding-top: 20vh;
+    padding-bottom: 10vh;
+}
+.card {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 50%;
+    padding: 2vw;
+    border: 0.1vh solid rgb(0, 0, 0);
+    border-radius: 8px;
+    background: #1a1a1a;
+    position: relative;
+}
+
+.img_card {
+    width: 35%;
+}
+.info_img_text{
+    padding-top: 1vh;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    color: #b4b4b4;
+    text-align: center;
+    margin: 0 auto;
+    /* text-wrap-mode: wrap; */
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+  
+.card-content {
+    width: 60%;
+    font-family: "Inter", sans-serif;
+}
+  
+.card-content h3 {
+    margin: 0;
+    font-weight: 800;
+    font-size: 4.5rem;
+    color: white;
+}
+  
+.card-content p {
+    margin: 0;
+    padding-top: 1vh;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    text-wrap-mode: wrap;
+}
+.card:nth-child(odd) {
+    left: 0;
+}
+  
+.card:nth-child(even) {
+    left: 50%;
+}
+#ai_evo {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 7rem;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 3vh;
+}
+.conclusion {
+    padding-top: 10vh;
+    padding-inline: 5vw;
+}
+#conc_header {
+    font-size: 7rem;
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+    color: rgb(255, 255, 255);
+}
+#conc_p {
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    color: rgb(238, 238, 238);
+}
+.footer {
+    margin-top: auto;
+    background-color: #020202;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+.footer-content {
+    color: rgb(146, 146, 146);
+}
+#footer_p {
+    color: rgb(236, 236, 236);
+    text-align: center;
+    font-size: 3rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+}
+.footer span {
+    color: rgb(146, 146, 146);
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.35 ease-in;
+}
+.footer span:hover {
+    color: #ffffff;
+    padding-bottom: 4vh;
+}
+.footer a {
+    text-decoration: none;
+    color: rgb(146, 146, 146);
+    transition: color 0.35 ease-in;
+}
+.footer a:hover {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
 }
 /*
  THIS CODE IS MADE BY MOHAMED ELENANY (M7MDY9) AND IS NOT AUTHORIZED TO BE USED WITHOUT HIS PERMISSION. 
