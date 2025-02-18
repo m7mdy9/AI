@@ -17,7 +17,7 @@ function isTouchDevice() {
 }
 function isPhone(){
     if('ontouchstart' in window || navigator.maxTouchPoints > 0){
-        if(window.innerWidth <= 768){
+        if(window.innerWidth <= 1024){
             return true
         } else {
             return false;
@@ -59,7 +59,7 @@ async function model_trigger_func(boolean){
 }
 function adjustLayout() {
     model_trigger = isPhone()? false:true
-    if(!model_trigger){
+    if(isPhone()){
         modelSwitch.style.display = "none"
         N_3D_Div.style.display = "none"
         N_no_anims.style.display = "block"
@@ -112,7 +112,7 @@ function adjustLayout() {
         aiDefImgDiv.style.paddingLeft = "5%";
         aiDefImgDiv.style.minHeight = "50vw";
         N_no_anims.style.width = "95vw"
-        N_3D_Div_2.style.height = `${537-(425/1.5)}vh`
+        N_3D_Div_2.style.height = `${537-(425/1.61)}vh`
         models_no_anims.forEach(el =>{
             el.style.height = "60vh"
         })
@@ -449,6 +449,7 @@ function throttle_ignore(func, limit) {
 document.addEventListener('DOMContentLoaded', () => {
     initLocoScroll();
     adjustLayout();
+    model_trigger_func(model_trigger)
     setupAnimations();
     const setupTooltip = (selector, text) => {
         const element = document.querySelector(selector);
@@ -483,7 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('resize', () => {
     adjustLayout();
     model_trigger = switch_trigger.checked? false:true
-    model_trigger_func(model_trigger)
+    // model_trigger_func(model_trigger)
     ScrollTrigger.refresh();
 });
 // window.addEventListener('beforeunload', () => {
