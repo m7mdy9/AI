@@ -315,7 +315,7 @@ function setupAnimations() {
     // createScrollTrigger(".conclusion", ".conclusion")
 }
 video.addEventListener("loadedmetadata", () => {
-    console.log("Video duration:", video.duration); // Debugging
+    console.log("Video duration:", video.duration); 
     updateTargetTime();
 });
 let state = 0;
@@ -534,6 +534,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('resize', () => {
     adjustLayout();
+    locoScroll.update()
     // model_trigger = switch_trigger.checked? false:true
     // model_trigger_func(model_trigger)
     ScrollTrigger.refresh();
