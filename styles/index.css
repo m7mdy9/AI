@@ -30,49 +30,6 @@
     font-weight: 100 900;
     font-style: italic;
 }
-@font-face {
-    font-family: 'TimesNewRoman';
-    src: url('../fonts/times/times new roman.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'TimesNewRoman';
-    src: url('../fonts/times/times new roman bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'TimesNewRoman';
-    src: url('../fonts/times/times new roman italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'TimesNewRoman';
-    src: url('../fonts/times/times new roman bold italic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-}
-:root {
-    --bg-color: #1A1A1A;
-    --primary-text-color: #F5F5F5;
-    --color-for-stuff: #eeeeee;
-    --secondary-text-color: #b3b3b3;
-    --accent-blue: #4DA8DA;
-    --accent-orange: #FF8C00;
-
-    --heading-font: 'Lato', sans-serif;
-    --subheading-font: 'PT Sans', sans-serif;
-    --body-font: 'Source Sans Pro', sans-serif;
-
-    --heading-size: 31px;
-    --subheading-size: 25px;
-    --body-size: 20px;
-}
 html {
     font-size: 1vh;
     scroll-behavior: auto !important;
@@ -215,7 +172,35 @@ body, html {
     height: auto;
 }
 
-
+.change-lang {
+    position: absolute;
+    z-index: 99999;
+    display: inline;
+    width: 100vw;
+    height: 20vh;
+}
+#change-lang-text {
+    font-size: 3rem;
+    position: absolute;
+    top: 7%;
+    right: 5%;
+    text-decoration: none;
+    /* color: #3b3b3b; */
+    cursor: pointer;
+    /* transition: filter 0.15s ease-in; */
+}
+#change-lang-img {
+    width: auto;
+    height: 8vh;
+    transition: filter 0.25s ease-in, transform 0.25s ease-in;
+}
+#change-lang-img:hover {
+    filter: invert(1) brightness(3);
+    transform: scale(1.1);
+}
+/* #change-lang-text:hover {
+    transform: scale(1.1);
+} */
 .header {
     display: flex;
     flex-direction: column;
@@ -245,9 +230,6 @@ body, html {
     opacity: 0;
     transform: translateY(50px)
 }
-.NVIDIA {
-    min-height: 200vh;
-}
 #NVIDIA_head {
     height: auto;
 }
@@ -271,7 +253,7 @@ body, html {
 #NVIDIA_3D_div {
     /* background: linear-gradient(to bottom, #0c0c0c, #000000 10%); */
     background: linear-gradient(to bottom, #0c0c0c, #000 5%);
-    min-height: 537vh;
+    height: 537vh;
 }
 #NVIDIA_3D_header {
     padding-top: 20%;
@@ -282,11 +264,15 @@ body, html {
     font-weight: 700;
     font-size: 7.5rem;
 }
+/* .break_div {
+    width: auto;
+    height: 15vh;
+} */
 #NVIDIA_3D_model {
     /* top: 50%; */
-    padding-top: 15vh;
+    /* padding-top: 15vh; */
     display: block;
-    height: 425vh;
+    min-height: 425vh;
     position: sticky;
     justify-content: center;
     align-items: center;
@@ -294,6 +280,13 @@ body, html {
     background-color: black;
     text-align: center;
     transition: opacity 0.5s ease-in;
+}
+#videoSection {
+    padding-top: 15vh;
+    padding-bottom: 2vh;
+}
+.last_no_anims {
+    padding-bottom: 8vh;
 }
 .NVIDIA_no_anims {
     padding-top: 15vh;
@@ -362,6 +355,77 @@ body, html {
     transform: translateY(3vh);
     padding-bottom: 2vh;
 }
+.info-container {
+    display: none;
+    width: auto;
+    padding-top: 5vh 1rem;
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    /* top: 50%; */
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+  
+  .info-icon {
+    font-weight: 600;
+    font-family: "Inter", "Roboto", sans-serif;
+    font-size: 3rem; /* Size of the "i" */
+    color: rgb(48, 93, 190); /* "i" color */
+    border: solid 0.5rem rgb(48, 93, 190);
+    background-color: transparent;
+    border-radius: 50%; /* Makes it a circle */
+    width: 5rem; /* Circle width */
+    height: 5rem; /* Circle height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.info-message {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    bottom: calc(100% + 1rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(51, 51,51, 0.8);    
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 3rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    max-width: 80vw;
+    width: 69vw;
+    /* text-wrap-mode: wrap; */
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    /* backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); */
+}
+  
+.info-message::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+  
+.info-container.show-message .info-message {
+    opacity: 1;
+    visibility: visible;
+}
+  
 .switch {
     position: relative;
     display: inline-block;
@@ -408,6 +472,9 @@ display: none;
     padding-inline: 2vw;
     position: relative;
 }
+/* #ar {
+    right: 45.5%;
+} */
 .ai_evo_container {
     background: linear-gradient(to bottom, #000, #0c0c0c 2.5%);
     padding-top: 20vh;
@@ -497,9 +564,12 @@ display: none;
 }
 .footer {
     margin-top: auto;
-    background-color: #020202;
     text-align: center;
-    padding: 20px 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25vh 0;
+    background-color: #111111;
+    border-top: #2b2b2b solid 0.5vh;
     width: 100%;
 }
 .footer-content {
@@ -512,7 +582,10 @@ display: none;
     font-family: "Roboto", sans-serif;
     font-weight: 700;
 }
-.footer span {
+.footer_link{
+    width: auto;
+    display: block;
+    padding-bottom: 2vh;
     color: rgb(146, 146, 146);
     text-align: center;
     font-size: 2.5rem;
@@ -520,14 +593,15 @@ display: none;
     font-weight: 700;
     cursor: pointer;
     transition: color 0.35 ease-in;
+    transition: transform 0.5s ease;
 }
-.footer span:hover {
+.footer_link:hover {
     color: #ffffff;
-    padding-bottom: 4vh;
+    transform: scale(1.1);
 }
 .footer a {
     text-decoration: none;
-    color: rgb(146, 146, 146);
+    color: hsl(0, 0%, 57%);
     transition: color 0.35 ease-in;
 }
 .footer a:hover {

@@ -2,6 +2,31 @@
  THIS CODE IS MADE BY MOHAMED ELENANY (M7MDY9) AND IS NOT AUTHORIZED TO BE USED WITHOUT HIS PERMISSION. 
  FOR MORE INFO VIEW LICENSE FILE - 2025 © MOHAMED ELENANY
 */
+// import { en } from "./lang.json" assert { type: 'json' };
+// const text_list = [
+//     en.list1,en.list2,
+//     en.list3,en.list4,
+// ]
+// const attributes = [
+//     en.nv, en.d_learn, en.m_learn, en.tensor, en.cv, en.ntp,
+// ]
+const text_list = [
+    "هذا هو RTX 3080 MSI",
+    "هذه هي مراوح التبريد، المسؤولة عن تبريد عن طريق إخراج الهواء الساخن، حيث يولد كارت الشاشة حرارة عند استخدامه، وبناءً على الاستخدام يمكن أن يسخن بسرعة.",
+    "هذا هو المبدد الحراري، الذي يُصنع عادةً من الألومنيوم، والغرض منه هو نقل الحرارة من الألواح الخلفية التي تلامس 'النقاط الساخنة'. ثم تنتقل هذه الحرارة عبر الألواح وتُبَرَّد بواسطة المراوح.",
+    "واخيرا, هذا هو المعالج الذى يعد قلب كارت الشاشة, وحوله مخزونات VRAM مسئولة عن سهولة توصلة البيانات الي المعالج"
+];
+
+const attributes = [
+    "إنفيديا هي شركة تكنولوجيا رائدة معروفة ببطاقاتها الرسومية القوية وتقدمها في مجالات الذكاء الاصطناعي والألعاب ومراكز البيانات.",
+    "التعلم العميق هو فرع من الذكاء الاصطناعي يستخدم الشبكات العصبية لمعالجة كميات هائلة من البيانات وحل المشكلات المعقدة.",
+    "التعلم الآلي هو مجال من مجالات الذكاء الاصطناعي الذي يمكن الأنظمة من التعلم من البيانات وتحسين الأداء دون برمجة صريحة.",
+    "تكنولوجيا Tensor Core هي العتاد المتخصص من إنفيديا المصمم لتسريع حسابات الذكاء الاصطناعي والتعلم العميق.",
+    "الرؤية الحاسوبية هي مجال من مجالات الذكاء الاصطناعي الذي يمكّن الآلات من تفسير وفهم المعلومات البصرية من العالم.",
+    "معالجة اللغة الطبيعية هي فرع من الذكاء الاصطناعي الذي يمكّن الآلات من فهم والتفاعل مع اللغة البشرية."
+];
+const isArabic = document.querySelector("html").lang === "ar"
+let layout_display_boolean = parseFloat(window.innerWidth / window.innerHeight).toFixed(5) < 1 || window.innerWidth <= 1024;
 const video = document.getElementById("aiBreakdown");
 let targetTime = 0;
 let isAnimating = false;
@@ -12,16 +37,19 @@ const stickyDiv = document.querySelector('#NVIDIA_3D_model');
 const stickyDivRect = stickyDiv.getBoundingClientRect();
 let model_trigger = isPhone()? false:true // false means mobile so trigger is false, otherwise it'd be on (true)
 const switch_trigger = document.querySelector('#toggle')
+const infoIcon = document.querySelector('.info-icon');
+const infoContainer = document.querySelector('.info-container');
 function isTouchDevice() {
     return ('ontouchstart' in window || navigator.maxTouchPoints > 0);
 }
 function isPhone(){
     if('ontouchstart' in window || navigator.maxTouchPoints > 0){
-        if(window.innerWidth <= 1024){
+        // if(window.innerWidth <= 1024){
             return true
-        } else {
-            return false;
-        }
+        // } 
+        // else {
+        //     return false;
+        // }
     } else {
         return false
     }
@@ -32,6 +60,7 @@ console.log('Is touch device:', isTouchDevice());
 const modelSwitch = document.querySelector('.model_switch')
 const N_3D_Div = document.querySelector("#NVIDIA_3D_model")
 const N_no_anims = document.querySelector('.NVIDIA_no_anims')
+const break_div = document.querySelector("#break_div")
 // const N_no_anims = document.querySelector('.NVIDIA_no_anims')
 async function model_trigger_func(boolean){
     if(!boolean){
@@ -39,7 +68,9 @@ async function model_trigger_func(boolean){
         N_3D_Div.style.opacity = "0"
         setTimeout(() => {
             N_no_anims.style.display = 'block'
-            N_3D_Div.style.display = "none"   
+            N_3D_Div.style.display = "none"
+            locoScroll.update()
+            // videoSec.paddingLeft = "none"   
         }, 700);
         setTimeout(() => {
             N_no_anims.style.opacity = '1'
@@ -49,27 +80,40 @@ async function model_trigger_func(boolean){
         N_no_anims.style.opacity = '0'
         setTimeout(() => {
             N_3D_Div.style.display = ""
-            N_no_anims.style.display = 'none'   
+            N_no_anims.style.display = 'none'
+            locoScroll.update()  
         }, 700);
         setTimeout(() => {
+            // videoSec.paddingLeft = ""
             N_3D_Div.style.opacity = "1"
         }, 900);
         return;
     }
 }
-function adjustLayout() {
-    model_trigger = isPhone()? false:true
+function first_run(){
     if(isPhone()){
         modelSwitch.style.display = "none"
         N_3D_Div.style.display = "none"
         N_no_anims.style.display = "block"
         N_no_anims.style.opacity = "1"
-    } else {
-        modelSwitch.style.display = ""
-        N_3D_Div.style.display = ""
-        N_no_anims.style.display = ""
-        N_no_anims.style.opacity = ""
-    }
+        infoContainer.style.display = "flex"
+        infoIcon.addEventListener('click', () => {
+            infoContainer.classList.toggle('show-message');
+          });
+          
+          document.addEventListener('click', (e) => {
+            if (!infoContainer.contains(e.target)) {
+                infoContainer.classList.remove('show-message');
+            }
+        });
+    } else return;
+}
+const ratio = parseFloat(window.innerWidth / window.innerHeight).toFixed(5);
+const isPortrait = ratio < 1;
+const small_display = window.innerWidth <= 1024;
+const card = document.querySelectorAll('.card')
+function adjustLayout() {
+    model_trigger = isPhone()? false:true
     const html = document.querySelector('html');
     const aiDefText = document.querySelector('#ai_def_text');
     const aiDefHead = document.querySelector('#ai_def_head');
@@ -80,15 +124,11 @@ function adjustLayout() {
     const N_3D_Div_2 = document.querySelector("#NVIDIA_3D_div")
     const models_no_anims = document.querySelectorAll(".models_no_anims")
     const models_no_anims_1 = document.querySelector(".models_no_anims")
-    const card = document.querySelectorAll('.card')
     const container = document.querySelector('.container')
     // const noAnimImg = document.querySelector(".no_anims_img")
 
 
-    const ratio = parseFloat(window.innerWidth / window.innerHeight).toFixed(5);
     const wide_ratio = ratio >= 3;
-    const isPortrait = ratio < 1;
-    const small_display = window.innerWidth <= 1024;
     const mid_ratio = ratio <= 0.85 && ratio >= 0.70;
     const mid_small_ratio = ratio < 0.70 && ratio >= 0.51;
     const small_ratio = ratio < 0.51 && ratio > 0.425;
@@ -112,7 +152,7 @@ function adjustLayout() {
         aiDefImgDiv.style.paddingLeft = "5%";
         aiDefImgDiv.style.minHeight = "50vw";
         N_no_anims.style.width = "95vw"
-        N_3D_Div_2.style.height = `${537-(425/1.61)}vh`
+        N_3D_Div_2.style.height = `auto`
         models_no_anims.forEach(el =>{
             el.style.height = "60vh"
         })
@@ -134,12 +174,15 @@ function adjustLayout() {
         models_no_anims.forEach(el =>{
             el.style.height = ""
         })
-        card.forEach(el => {
-            el.style.width = ""
-            el.style.left = ""
-            el.style.marginTop = ""
-        })
+        if(!isArabic){
+            card.forEach(el => {
+                el.style.width = ""
+                el.style.left = ""
+                el.style.marginTop = ""
+            })
+        }
         models_no_anims_1.style.height = ""
+        N_3D_Div_2.style.height = `auto`
     }
 
     const fontSizeMap = {
@@ -181,9 +224,6 @@ function initLocoScroll() {
         },
         lerp: 0.125,
         multiplier: 0.8,
-        getDirection: true,
-        debug: true, // Visualize boundaries
-
     });
 
     ScrollTrigger.scrollerProxy('[data-scroll-container]', {
@@ -253,13 +293,13 @@ function setupAnimations() {
         }
     });
 
-    const createScrollTrigger = (trigger, id) => {
+    const createScrollTrigger = (trigger, id, start = layout_display_boolean ? "top 85%": "top 75%") => {
         gsap.from(trigger, {
             opacity: 0,
             duration: 1.2,
             scrollTrigger: {
                 trigger: id,
-                start: "top 75%",
+                start: start,
             }
         });
     };
@@ -267,6 +307,9 @@ function setupAnimations() {
     createScrollTrigger(".ai_def_div", ".ai_def_div");
     createScrollTrigger("#NVIDIA_head", "#NVIDIA_header");
     createScrollTrigger("#NVIDIA_3D_div", "#NVIDIA_3D_header");
+    createScrollTrigger("#ai_evo", "#ai_evo", "top 90%")
+    createScrollTrigger(".card", ".card", "top 90%")
+    // createScrollTrigger(".conclusion", ".conclusion")
 }
 video.addEventListener("loadedmetadata", () => {
     console.log("Video duration:", video.duration); // Debugging
@@ -294,12 +337,7 @@ function updateTargetTime() {
     //     textLabel.innerText = "Graphics Cards being used for AI models are typically being worked at full capacity, and so they generate a lot of heat.One way to combat this is by the use of fans to remove heat."
     //     textLabel.style.opacity = 1
     // }
-    const text_list = [
-    "This is the RTX 3080 MSI."
-    ,"These are the cooling fans, responsible for cooling the GPU by bringing the hot air out, as the GPU generates heat when being used, and depending on the usage it can get really hot quickly."
-    ,"This is the heatsink, which is typically made of aluminum, it's purpose is to transfer the heat from plates on the back that touch the 'hot spots'. This heat then gets transferred through the plates and is blown away by fans."
-    ,"Lastly, the die. The die is the chip that provides the base for everything else to run. Surrounding it are VRAM modules, which store memory so the die can get quick access to the data it needs."
-    ]
+
     const list_of_times = [
         448+10, 490+7, 570+12
     ]
@@ -365,7 +403,7 @@ function updateTargetTime() {
         state = 3
         // if(targetTime < 9.5) return;
         textLabel.style.opacity = 0
-        set_text_and_opacity_time(textLabel, text_list[state], duration_used-1)
+        set_text_and_opacity_time(textLabel, text_list[state], duration_used-2.8)
         console.log(targetTime, video.currentTime)
         gsap.to(video, {
             currentTime: video.duration,
@@ -389,7 +427,7 @@ function updateTargetTime() {
             }
             state = 2 
             textLabel.style.opacity = 0
-            set_text_and_opacity_time(textLabel, text_list[state], duration_used-1)
+            set_text_and_opacity_time(textLabel, text_list[state], duration_used-1.5)
             console.log("2nd", video.currentTime >= 12.5)
             console.log(targetTime)
             gsap.to(video, {
@@ -449,7 +487,18 @@ function throttle_ignore(func, limit) {
 document.addEventListener('DOMContentLoaded', () => {
     initLocoScroll();
     adjustLayout();
-    model_trigger_func(model_trigger)
+    if(isArabic && !isPortrait && !small_display){
+        const ai_div = document.querySelector(".ai_def_div")
+        ai_div.style.paddingLeft = "0"
+        ai_div.style.paddingRight = "5vh"
+        card.forEach(el => {
+            el.style.width = "100%"
+            el.style.left = "0"
+            el.style.marginTop = "5vh"
+        })
+    }
+    first_run();
+    // model_trigger_func(model_trigger)
     setupAnimations();
     const setupTooltip = (selector, text) => {
         const element = document.querySelector(selector);
@@ -457,36 +506,39 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     document.querySelectorAll(".ai_span_nv, .ai_span_nv_main").forEach(span => {
-        span.setAttribute('title', "NVIDIA is a leading tech company known for its powerful GPUs and advancements in AI, gaming, and data centers.");
+        span.setAttribute('title', attributes[0]);
     });
 
-    setupTooltip('.ai_span_d_learn', 'Deep learning is a subset of AI that uses neural networks to process vast amounts of data and solve complex problems.');
-    setupTooltip('.ai_span_m_learn', 'Machine learning is a field of AI that enables systems to learn from data and improve performance without explicit programming.');
-    setupTooltip('.ai_span_tensor', 'Tensor Core technology is NVIDIA\'s specialized hardware designed to accelerate AI and deep learning computations.');
-    setupTooltip('.ai_span_cv', 'Computer vision is a field of AI that allows machines to interpret and understand visual information from the world.');
-    setupTooltip('.ai_span_ntp', 'Natural language processing is a branch of AI that enables machines to understand and interact with human language.');
+    setupTooltip('.ai_span_d_learn', attributes[1]);
+    setupTooltip('.ai_span_m_learn', attributes[2]);
+    setupTooltip('.ai_span_tensor', attributes[3]);
+    setupTooltip('.ai_span_cv', attributes[4]);
+    setupTooltip('.ai_span_ntp', attributes[5]);
     
     locoScroll.on('scroll', () => {
         ScrollTrigger.update
-        if(model_trigger){
+        if(model_trigger || !isPhone()){
             throttle_ignore(updateTargetTime(), 1000)
         }
     });
     ScrollTrigger.refresh();
-    switch_trigger.addEventListener('change', ()=>{
-        model_trigger = switch_trigger.checked? false:true
-        console.log(model_trigger)
-        model_trigger_func(model_trigger)
-        // adjustLayout()
-    })
+    if(!isPhone()){
+        switch_trigger.addEventListener('change', ()=>{
+            model_trigger = switch_trigger.checked? false:true
+            console.log(model_trigger)
+            model_trigger_func(model_trigger)
+            // adjustLayout()
+        })
+    }
 });
 
 window.addEventListener('resize', () => {
     adjustLayout();
-    model_trigger = switch_trigger.checked? false:true
+    // model_trigger = switch_trigger.checked? false:true
     // model_trigger_func(model_trigger)
     ScrollTrigger.refresh();
 });
+
 // window.addEventListener('beforeunload', () => {
 //     destroyLocoScroll();
 //     ScrollTrigger.killAll();

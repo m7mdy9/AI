@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("../fonts/inter/Inter-VariableFont_opszwght.ttf");
+  }
+  
+  @font-face {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('../fonts/inter/Inter-Italic-VariableFont_opszwght.ttf');
+  }
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto/Roboto-VariableFont_wdthwght.ttf') format('truetype');
+    font-weight: 100 900; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto/Roboto-Italic-VariableFont_wdthwght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+html, body {
+    margin: 0 auto;
+    /* height: 100vh;
+    width: 100vw; */
+    background-color: #0c0c0c;
+    font-size: 1vh;
+}
+#header_1 {
+    padding-top: 27vh;
+    text-align: center;
+    justify-self: center;
+    padding-inline: 5vw;
+    margin: 0 auto;
+    color: whitesmoke;
+    font-weight: 750;
+    font-size: 8rem;
+    font-family: "Inter", sans-serif;
+}
+.flags {
+    /* padding-left: 2.5%;
+    padding-right: 5%; */
+    /* position: absolute; */
+    /* left: 50%; */
+    /* align-items: center; */
+    justify-content: center;
+    /* text-align: center; */
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    padding: 20px 0;
+    gap: 2.5vw;
+    /* padding-left: 1vw; */
+}
+.flag_div {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+    /* padding: 2.5vh; */
+    width: 100%;
+    max-width: 15vw;
+    height: max-content;
+    /* background-color: rgb(141, 141, 141); */
+    border-radius: 10%;
+    transition: transform 0.3s ease;
+}
+.flag_div:hover {
+    transform: scale(1.1);
+}
+.flag_img {
+    height: auto;
+    width: 100%;
+    border-radius: 10%; 
+}
+.flag_text {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 0.9vh;
+    }
+    .flags {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5vw;
+    }
+    .flag_div {
+        flex-direction: column;
+        max-width: 30vw;
+    }
+}
+@media (max-width: 480px) {
+    html {
+        font-size: 0.8vh;
+    }
+    .flags {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2vw;
+    }
+    .flag_div {
+        max-width: 40vw;
+    }
+}
