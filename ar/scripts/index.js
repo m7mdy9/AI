@@ -306,8 +306,8 @@ function setupAnimations() {
 
     createScrollTrigger(".ai_def_div", ".ai_def_div");
     createScrollTrigger("#NVIDIA_head", "#NVIDIA_header");
-    createScrollTrigger("#NVIDIA_3D_div", "#NVIDIA_3D_header");
     if(!isPhone() && !small_display && !isPortrait) {
+        createScrollTrigger("#NVIDIA_3D_div", "#NVIDIA_3D_header");
         createScrollTrigger("#ai_evo", "#ai_evo", "top 90%")
         createScrollTrigger(".card", ".card", "top 90%")
     }
