@@ -92,7 +92,7 @@ async function model_trigger_func(boolean){
     }
 }
 function first_run(){
-    if(isPhone()){
+    if(isPhone() || window.innerWidth < 617){
         modelSwitch.style.display = "none"
         N_3D_Div.style.display = "none"
         N_no_anims.style.display = "block"
@@ -552,6 +552,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('resize', () => {
     adjustLayout();
+    if(window.innerWidth < 617){
+        first_run()
+    }
     locoScroll.update()
     // model_trigger = switch_trigger.checked? false:true
     // model_trigger_func(model_trigger)

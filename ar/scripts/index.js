@@ -91,7 +91,7 @@ async function model_trigger_func(boolean){
     }
 }
 function first_run(){
-    if(isPhone()){
+    if(isPhone() || window.innerWidth < 617){
         modelSwitch.style.display = "none"
         N_3D_Div.style.display = "none"
         N_no_anims.style.display = "block"
@@ -117,6 +117,7 @@ const wide_ratio = ratio >= 3;
 const isPortrait = ratio < 1;
 const small_display = window.innerWidth <= 1024;
 function adjustLayout() {
+    // console.log(window.innerWidth)
     model_trigger = isPhone()? false:true
     const html = document.querySelector('html');
     const aiDefText = document.querySelector('#ai_def_text');
@@ -547,6 +548,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('resize', () => {
     adjustLayout();
+    if(window.innerWidth < 617){
+        first_run()
+    }
     locoScroll.update()
     // model_trigger = switch_trigger.checked? false:true
     // model_trigger_func(model_trigger)
