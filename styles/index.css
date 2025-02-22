@@ -7,7 +7,7 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url("../fonts/inter/Inter-VariableFont_opszwght.ttf");
+    src: url("../media/fonts/inter/Inter-VariableFont_opszwght.ttf");
   }
   
   @font-face {
@@ -15,18 +15,18 @@
     font-style: italic;
     font-weight: 100 900;
     font-display: swap;
-    src: url('../fonts/inter/Inter-Italic-VariableFont_opszwght.ttf');
+    src: url('../media/fonts/inter/Inter-Italic-VariableFont_opszwght.ttf');
   }
 @font-face {
     font-family: 'Roboto';
-    src: url('../fonts/roboto/Roboto-VariableFont_wdthwght.ttf') format('truetype');
+    src: url('../media/fonts/roboto/Roboto-VariableFont_wdthwght.ttf') format('truetype');
     font-weight: 100 900; 
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Roboto';
-    src: url('../fonts/roboto/Roboto-Italic-VariableFont_wdthwght.ttf') format('truetype');
+    src: url('../media/fonts/roboto/Roboto-Italic-VariableFont_wdthwght.ttf') format('truetype');
     font-weight: 100 900;
     font-style: italic;
 }
@@ -469,7 +469,7 @@ display: none;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding-inline: 2vw;
+    padding-inline: 3vw;
     position: relative;
 }
 /* #ar {

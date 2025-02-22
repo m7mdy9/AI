@@ -8,7 +8,7 @@ This project is licensed under the [Creative Commons Attribution-NonCommercial-N
 
 ## Description
 
-This website is a website made for a national competition, it's purpose is to explain Artificial Intelligence in a new and creative way.
+This project is a website made for a national competition, it's purpose is to explain Artificial Intelligence in a new and creative way.
 
 ## Features
 
@@ -24,6 +24,8 @@ This site features multilpe things that include:
 - Font, font sizes and colors that are easily readable, and compatable based on aspect ratio.
 
 ## How to use/view
+
+**FOR THE BEST EXPERIENCE VIEW ON A MID TIER PC IN 16:9 ASPECT RATIO WITH GOOD INTERNET SPEED**
 
 In order to use or view the site you will have to open it's [hosted version](https://m7mdy9.github.io/AI) on github.
 Or you can install it as a ZIP file from the [Repositry](https://github.com/m7mdy9/AI) and open it in your computer from a browser, but in order to have the best experience you should be opening the index.html in the main directory and then going from there to other pages on the website.
