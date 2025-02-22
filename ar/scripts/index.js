@@ -103,15 +103,19 @@ function first_run(){
           
           document.addEventListener('click', (e) => {
             if (!infoContainer.contains(e.target)) {
-                infoContainer.classList.remove('show-message');
+              infoContainer.classList.remove('show-message');
             }
-        });
+          });
     } else return;
 }
-const ratio = parseFloat(window.innerWidth / window.innerHeight).toFixed(5);
+let card = document.querySelectorAll('.card')
+if (isArabic){
+    card = document.querySelectorAll(".arcard")
+}
+const ratio = parseFloat(window.innerWidth / window.innerHeight).toFixed(2);
+const wide_ratio = ratio >= 3;
 const isPortrait = ratio < 1;
 const small_display = window.innerWidth <= 1024;
-const card = document.querySelectorAll('.card')
 function adjustLayout() {
     model_trigger = isPhone()? false:true
     const html = document.querySelector('html');
@@ -127,14 +131,24 @@ function adjustLayout() {
     const container = document.querySelector('.container')
     // const noAnimImg = document.querySelector(".no_anims_img")
 
-
+    const ratio = parseFloat(window.innerWidth / window.innerHeight).toFixed(2);
     const wide_ratio = ratio >= 3;
-    const mid_ratio = ratio <= 0.85 && ratio >= 0.70;
-    const mid_small_ratio = ratio < 0.70 && ratio >= 0.51;
-    const small_ratio = ratio < 0.51 && ratio > 0.425;
-    const tiny_ratio = ratio <= 0.425;
+    const isPortrait = ratio < 1;
+    const windowWidth = window.innerWidth
+    const small_display = windowWidth <= 1024;
+    const mid_ratio = ratio < 0.85 && ratio >= 0.70 || 850 >= windowWidth > 768;
+    const mid_small_ratio = ratio < 0.70 && ratio >= 0.6;
+    const small_ratio = ratio < 0.6 && ratio > 0.43 && 768 >= windowWidth; 
+    const tiny_ratio = ratio <= 0.43;
 
     if (isPortrait || small_display) {
+        card.forEach(el =>{
+            el.style.display = "block"
+            el.firstElementChild.style.width = "100%";
+            el.lastElementChild.style.width = "100%";
+            el.lastElementChild.style.paddingTop = "5%"
+            el.lastElementChild.style.paddingBottom = "3%"
+        })
         aiDefText.style.width = "100%";
         aiDefImgDiv.style.width = "100%";
         aiDefImg.style.transform = "translateY(-10rem)";
@@ -159,7 +173,7 @@ function adjustLayout() {
         models_no_anims_1.style.height = "40vh"
         card.forEach(el => {
             el.style.width = "100%"
-            el.style.left = "0"
+            el.style.right = "0"
             el.style.marginTop = "5vh"
         })
         container.style.gap = "0";
@@ -169,6 +183,13 @@ function adjustLayout() {
         [aiDefText, aiDefImgDiv, aiDefImg, aiDefDiv, aiDefP, aiDefHead, container].forEach(el => {
             el.style = '';
         });
+        card.forEach(el =>{
+            el.style.display = ""
+            el.firstElementChild.style.width = "";
+            el.lastElementChild.style.width = "";
+            el.lastElementChild.style.paddingTop = ""
+            el.lastElementChild.style.paddingBottom = ""
+        })
         N_3D_Div.style.height = ``
         N_no_anims.style.width = ""
         models_no_anims.forEach(el =>{
@@ -177,7 +198,7 @@ function adjustLayout() {
         if(!isArabic){
             card.forEach(el => {
                 el.style.width = ""
-                el.style.left = ""
+                el.style.right = ""
                 el.style.marginTop = ""
             })
         }
@@ -188,7 +209,7 @@ function adjustLayout() {
     const fontSizeMap = {
         mid_ratio: '0.85vh',
         mid_small_ratio: '0.75vh',
-        small_ratio: '0.65vh',
+        small_ratio: '0.68vh',
         tiny_ratio: '0.55vh',
         wide_ratio: '1.25vh',
         default: '1vh'
@@ -314,7 +335,7 @@ function setupAnimations() {
     // createScrollTrigger(".conclusion", ".conclusion")
 }
 video.addEventListener("loadedmetadata", () => {
-    console.log("Video duration:", video.duration);
+    console.log("Video duration:", video.duration); 
     updateTargetTime();
 });
 let state = 0;
@@ -489,16 +510,6 @@ function throttle_ignore(func, limit) {
 document.addEventListener('DOMContentLoaded', () => {
     initLocoScroll();
     adjustLayout();
-    if(isArabic && !isPortrait && !small_display){
-        const ai_div = document.querySelector(".ai_def_div")
-        ai_div.style.paddingLeft = "0"
-        ai_div.style.paddingRight = "5vh"
-        card.forEach(el => {
-            el.style.width = "100%"
-            el.style.left = "0"
-            el.style.marginTop = "5vh"
-        })
-    }
     first_run();
     // model_trigger_func(model_trigger)
     setupAnimations();

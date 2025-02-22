@@ -497,7 +497,7 @@ display: none;
 }
 .info_img_text{
     padding-top: 1vh;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
     font-family: "Roboto", sans-serif;
     color: #b4b4b4;
@@ -537,6 +537,30 @@ display: none;
   
 .card:nth-child(even) {
     left: 50%;
+}
+.arcard img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.arcard {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 50%;
+    padding: 2vw;
+    border: 0.1vh solid rgb(0, 0, 0);
+    border-radius: 8px;
+    background: #1a1a1a;
+    position: relative;
+}
+
+.arcard:nth-child(odd) {
+    right: 0;
+}
+  
+.arcard:nth-child(even) {
+    right: 50%;
 }
 #ai_evo {
     font-family: "Inter", sans-serif;

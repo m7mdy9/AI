@@ -110,6 +110,10 @@ function first_run(){
     } else return;
 }
 const card = document.querySelectorAll('.card')
+const ratio = parseFloat(window.innerWidth / window.innerHeight).toFixed(2);
+const wide_ratio = ratio >= 3;
+const isPortrait = ratio < 1;
+const small_display = window.innerWidth <= 1024;
 function adjustLayout() {
     model_trigger = isPhone()? false:true
     const html = document.querySelector('html');
@@ -125,17 +129,24 @@ function adjustLayout() {
     const container = document.querySelector('.container')
     // const noAnimImg = document.querySelector(".no_anims_img")
 
-
-    const ratio = parseFloat(window.innerWidth / window.innerHeight).toFixed(5);
+    const ratio = parseFloat(window.innerWidth / window.innerHeight).toFixed(2);
     const wide_ratio = ratio >= 3;
     const isPortrait = ratio < 1;
-    const small_display = window.innerWidth <= 1024;
-    const mid_ratio = ratio <= 0.85 && ratio >= 0.70;
-    const mid_small_ratio = ratio < 0.70 && ratio >= 0.51;
-    const small_ratio = ratio < 0.51 && ratio > 0.425;
-    const tiny_ratio = ratio <= 0.425;
+    const windowWidth = window.innerWidth
+    const small_display = windowWidth <= 1024;
+    const mid_ratio = ratio < 0.85 && ratio >= 0.70 || 850 >= windowWidth > 768;
+    const mid_small_ratio = ratio < 0.70 && ratio >= 0.6;
+    const small_ratio = ratio < 0.6 && ratio > 0.43 && 768 >= windowWidth; 
+    const tiny_ratio = ratio <= 0.43;
 
     if (isPortrait || small_display) {
+        card.forEach(el =>{
+            el.style.display = "block"
+            el.firstElementChild.style.width = "100%";
+            el.lastElementChild.style.width = "100%";
+            el.lastElementChild.style.paddingTop = "5%"
+            el.lastElementChild.style.paddingBottom = "3%"
+        })
         aiDefText.style.width = "100%";
         aiDefImgDiv.style.width = "100%";
         aiDefImg.style.transform = "translateY(-10rem)";
@@ -170,6 +181,13 @@ function adjustLayout() {
         [aiDefText, aiDefImgDiv, aiDefImg, aiDefDiv, aiDefP, aiDefHead, container].forEach(el => {
             el.style = '';
         });
+        card.forEach(el =>{
+            el.style.display = ""
+            el.firstElementChild.style.width = "";
+            el.lastElementChild.style.width = "";
+            el.lastElementChild.style.paddingTop = ""
+            el.lastElementChild.style.paddingBottom = ""
+        })
         N_3D_Div.style.height = ``
         N_no_anims.style.width = ""
         models_no_anims.forEach(el =>{
@@ -189,7 +207,7 @@ function adjustLayout() {
     const fontSizeMap = {
         mid_ratio: '0.85vh',
         mid_small_ratio: '0.75vh',
-        small_ratio: '0.65vh',
+        small_ratio: '0.68vh',
         tiny_ratio: '0.55vh',
         wide_ratio: '1.25vh',
         default: '1vh'
