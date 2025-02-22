@@ -125,7 +125,7 @@ function adjustLayout() {
     const aiDefImgDiv = document.querySelector('#ai_def_img_div');
     const aiDefImg = document.querySelector('#ai_def_img');
     const aiDefP = document.querySelector('#ai_def_p');
-    const aiDefDiv = document.querySelector('.ai_def_div');
+    const aiDefDiv = document.querySelector('.ar_ai_def_div');
     const N_3D_Div_2 = document.querySelector("#NVIDIA_3D_div")
     const models_no_anims = document.querySelectorAll(".models_no_anims")
     const models_no_anims_1 = document.querySelector(".models_no_anims")
@@ -161,7 +161,7 @@ function adjustLayout() {
         aiDefP.style.paddingLeft = "7.5%";
         aiDefHead.style.paddingRight = "5%";
         aiDefHead.style.paddingLeft = "5%";
-        aiDefDiv.style.paddingLeft = "0%";
+        aiDefDiv.style.paddingRight = "0%";
         aiDefImgDiv.style.maxWidth = "100vw";
         aiDefImgDiv.style.paddingRight = "5%";
         aiDefImgDiv.style.paddingLeft = "5%";

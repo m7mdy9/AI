@@ -102,6 +102,13 @@ body, html {
     flex-wrap: nowrap;
     justify-content: space-between;
 }
+.ar_ai_def_div {
+    min-height: 92vh;
+    padding-right: 5vh;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
 #ai_def_text {
     width: 50vw;   
 }
