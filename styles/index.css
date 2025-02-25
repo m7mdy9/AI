@@ -290,7 +290,7 @@ body, html {
     transition: opacity 0.5s ease-in;
 }
 #videoSection {
-    padding-top: 15vh;
+    padding-top: 10vh;
     padding-bottom: 2vh;
 }
 .last_no_anims {
@@ -333,7 +333,7 @@ body, html {
 #changing {
     padding-inline: 10%;
     font-size: 3.5rem;
-    height: 3em;
+    height: 3.75em;
     font-family: "Inter", sans-serif;
     font-weight: 600;
     transition: opacity 0.5s ease-in;

@@ -152,6 +152,9 @@ function adjustLayout() {
         aiDefImgDiv.style.width = "95%";
         aiDefImg.style.transform = "translateY(-10rem)";
         aiDefImg.style.paddingRight = "0";
+        if(ratio > 1){
+            aiDefImg.style.width = "75%"
+        }
         aiDefDiv.style.justifyContent = "center";
         aiDefDiv.style.paddingLeft = "0";
         // aiDefImg.style.alignItems = "center";
@@ -176,10 +179,18 @@ function adjustLayout() {
         models_no_anims_1.style.height = "40vh"
         let  width_desired
         card.forEach(el => {
-            if(el.textContent.includes("Frank Rosenblatt")){
-                width_desired = "50vw"
+            if(el.textContent.includes("Frank")){
+                if(ratio > 1){
+                    width_desired = "30vw"
+                } else {
+                    width_desired = "40vw"
+                }
             } else {
-                width_desired = "70vw"
+                if(ratio > 1){
+                    width_desired = "50vw"
+                } else {
+                    width_desired = "65vw"
+                }
             }
             const img1 = el.lastElementChild.firstElementChild
             // if(windowWidth > 768){
@@ -187,8 +198,8 @@ function adjustLayout() {
                 el.lastElementChild.style.flexDirection = "column"
                 el.lastElementChild.style.justifyContent = "center"
                 el.lastElementChild.style.alignItems = "center"
-                img1.style.width = width_desired
                 img1.style.height = "auto"
+                img1.style.width = width_desired
             // }
 
             el.style.width = "100%"
@@ -374,8 +385,9 @@ function updateTargetTime() {
         //     return;
         // }
         const textLabel = document.getElementById("changing")
-        targetTime = ((locoScroll.scroll.instance.scroll.y).toFixed(2) / window.innerHeight) * 100;    
-        // console.log("Scroll",locoScroll.scroll.instance.scroll.y, targetTime)
+        targetTime = ((locoScroll.scroll.instance.scroll.y).toFixed(2) / window.innerHeight) * 100;
+        if(targetTime < 100) return;    
+    // console.log("Scroll",locoScroll.scroll.instance.scroll.y, targetTime)
     // if (targetTime >= 490 && targetTime <= 570) {
     //     textLabel.innerText = "A heat sink, which is typically made of aluminum, transfers heat from plates on the back that touch 'hot spots'.This heat then gets transferred through the plates and blown away by fans."
     //     textLabel.style.opacity = 1
@@ -563,7 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     locoScroll.on('scroll', () => {
         ScrollTrigger.update
-        if(model_trigger || !isPhone()){
+        if(model_trigger && !isPhone()){
             throttle_ignore(updateTargetTime(), 1000)
         }
     });

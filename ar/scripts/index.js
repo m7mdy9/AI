@@ -177,10 +177,10 @@ function adjustLayout() {
         })
         models_no_anims_1.style.height = "40vh"
         card.forEach(el => {
-            if(el.textContent.includes("Frank Rosenblatt")){
+            if(el.textContent.includes("فرانك")){
                 width_desired = "50vw"
             } else {
-                width_desired = "70vw"
+                width_desired = "65vw"
             }
             const img1 = el.lastElementChild.firstElementChild
             // if(windowWidth > 768){
@@ -215,6 +215,9 @@ function adjustLayout() {
             el.lastElementChild.style.width = "";
             el.lastElementChild.style.paddingTop = ""
             el.lastElementChild.style.paddingBottom = ""
+            el.style.width = ""
+            el.style.right = ""
+            el.style.marginTop = ""
         })
         N_3D_Div.style.height = ``
         N_no_anims.style.width = ""
@@ -556,7 +559,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     locoScroll.on('scroll', () => {
         ScrollTrigger.update
-        if(model_trigger || !isPhone()){
+        if(model_trigger && !isPhone()){
             throttle_ignore(updateTargetTime(), 1000)
         }
     });
