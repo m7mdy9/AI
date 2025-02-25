@@ -3,6 +3,8 @@ IN ORDER TO VIEW OR OPEN THE SITE YOU MUST EITHER OPEN THE INDEX.HTML FILE IN TH
 RIGHT CLICKING AND PRESSING OPEN WITH OR COPYING THE PATH IN THE BROWSER'S ADDRESS BAR
 OR OPENING THIS LINK https://m7mdy9.github.io/AI IN YOUR BROWSER
 
+This Website has a GITHUB Repositry which it's like is https://github.com/m7mdy9/AI , Also the website is hosted on github on https://m7mdy9.github.io/AI , and it can be viewed on any device and depending on the size of the screen and things in similar manner, where it changes to fit perfectly and look the best it could. 
+
 ALTERNATIVELY FOR OPENING INDEX.HTML YOU CAN RUN THE RUN.bat FILE.
 
 IF YOU WILL BE VIEWING THE SITE VIA IT'S HOSTED LINK ON GITHUB IN ORDER TO HAVE THE BEST EXPERIENCE YOU MUST:
@@ -32,10 +34,12 @@ This site features multilpe things that include:
 - A stylish title icon.
 - A small icon top right in the translated sites to go back to the language selector page.
 - Slick animations and a modern design, in new and creative ways.
-- A section where a model of an RTX disassembles as you scroll down, with the option to turn that 3D Animation off.
+- A section where a model of an RTX disassembles as you scroll down and each part is explained, with the option to turn that 3D Animation off.
 (Disabled on mobile devices for hardware reasons)
 - Cards that include essential information regarding the Evolution of Artificial Intelligence.
-- Pictures that fit the context.
+- The site includes Pictures that fit the context.
 - Font, font sizes and colors that are easily readable, and compatible based on aspect ratio.
+- If you resize while viewing the site on Desktop the site changes it's layout in order to make it look the best and fit correctly.
+
 
 FOR FULL CONTEXT AND MORE INFORMATION VIEW THE README.md OR THE REPOSITORY OF THE SITE https://github.com/m7mdy9/AI 

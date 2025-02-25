@@ -91,8 +91,10 @@ async function model_trigger_func(boolean){
         return;
     }
 }
+let first_run_result
 function first_run(){
     if(isPhone() || window.innerWidth < 617){
+        first_run_result = true
         modelSwitch.style.display = "none"
         N_3D_Div.style.display = "none"
         N_no_anims.style.display = "block"
@@ -107,7 +109,23 @@ function first_run(){
               infoContainer.classList.remove('show-message');
             }
           });
-    } else return;
+    } else {
+        modelSwitch.style.display = ""
+        N_3D_Div.style.display = ""
+        N_no_anims.style.display = ""
+        N_no_anims.style.opacity = ""
+        infoContainer.style.display = ""
+        first_run_result = false
+        infoIcon.removeEventListener('click', () => {
+            infoContainer.classList.toggle('show-message');
+          });
+          
+          document.removeEventListener('click', (e) => {
+            if (!infoContainer.contains(e.target)) {
+              infoContainer.classList.remove('show-message');
+            }
+          });
+    };
 }
 const card = document.querySelectorAll('.card')
 const ratio = parseFloat(window.innerWidth / window.innerHeight).toFixed(2);
@@ -593,6 +611,8 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('resize', () => {
     adjustLayout();
     if(window.innerWidth < 617){
+        first_run()
+    } else if(first_run_result){
         first_run()
     }
     locoScroll.update()
