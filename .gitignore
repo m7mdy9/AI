@@ -1,6 +1,5 @@
 old/ 
 .vscode
 *.code-workspace
-USAGE_AR.TXT
-USAGE_EN.TXT
+*.txt
 test/
