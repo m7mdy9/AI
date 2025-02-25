@@ -31,6 +31,8 @@ This site features multilpe things that include:
 
 In order to use or view the site you will have to open it's [hosted version](https://m7mdy9.github.io/AI) on github.
 Or you can install it as a ZIP file from the [Repositry](https://github.com/m7mdy9/AI) and open it in your computer from a browser, but in order to have the best experience you should be opening the index.html in the main directory and then going from there to other pages on the website.
+Alternatively after installing the code you can run the RUN.bat file to open the website.
+(THE FILES MUST BE LEFT UNTOUCH TO ENSURE THE BEST EXPERIENCE)
 
 ## Programming langauges used
 
