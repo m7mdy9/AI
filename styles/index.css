@@ -169,6 +169,7 @@ body, html {
 }
 
 #ai_def_img_div {
+    /* display: flex; */
     width: 50%;
     transform: translateY(50px);
     padding-left: 0.31vw;
@@ -379,13 +380,13 @@ body, html {
   .info-icon {
     font-weight: 600;
     font-family: "Inter", "Roboto", sans-serif;
-    font-size: 3rem;
+    font-size: 4rem;
     color: rgb(48, 93, 190);
-    border: solid 0.5rem rgb(48, 93, 190);
+    border: solid 0.6rem rgb(48, 93, 190);
     background-color: transparent;
     border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -517,7 +518,6 @@ display: none;
     height: auto;
     border-radius: 8px;
 }
-  
 .card-content {
     width: 60%;
     font-family: "Inter", sans-serif;

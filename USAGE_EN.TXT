@@ -5,7 +5,7 @@ OR OPENING THIS LINK https://m7mdy9.github.io/AI IN YOUR BROWSER
 
 IF YOU WILL BE VIEWING THE SITE VIA IT'S HOSTED LINK ON GITHUB IN ORDER TO HAVE THE BEST EXPERIENCE YOU MUST:
 - Have a good and stable internet connection
-- It's recommended to view it on a Mid tier PC however the site is fully mobile compatable..
+- It's recommended to view it on a Mid tier PC however the site is fully mobile compatible..
 
 BEFORE CONTINUING PLEASE READ THE LICENSE TO KNOW WHAT YOU CAN/CAN'T DO WITH THE FILES AS THE OWNER WORKED VERY HARD TO PRODUCE SUCH SITE.
 
@@ -18,7 +18,7 @@ The programming languages + hypertext markup langauges used:
 
 ## Description
 
-This project is a website made for a national competition, it's purpose is to explain Artificial Intelligence in a new and creative way.
+This project is a website made for a national competition, it's purpose is to explain Artificial Intelligence in a new and creative way that allows users to experience it in 4 different languages.
 
 ## Features
 
@@ -26,11 +26,14 @@ This site features multilpe things that include:
 
 - 4 Support languages (en, ar, es, fr)
 - Full mobile compatability.
+- Smooth scrolling with a scroll wheel, alongside GSAP based animations that occur on load and on scrolling.
+- A stylish title icon.
 - A small icon top right in the translated sites to go back to the language selector page.
 - Slick animations and a modern design, in new and creative ways.
 - A section where a model of an RTX disassembles as you scroll down, with the option to turn that 3D Animation off.
-- Cards that include essentional information regarding the Evolution of Artificial Intelligence.
+(Disabled on mobile devices for hardware reasons)
+- Cards that include essential information regarding the Evolution of Artificial Intelligence.
 - Pictures that fit the context.
-- Font, font sizes and colors that are easily readable, and compatable based on aspect ratio.
+- Font, font sizes and colors that are easily readable, and compatible based on aspect ratio.
 
 FOR FULL CONTEXT AND MORE INFORMATION VIEW THE README.md OR THE REPOSITORY OF THE SITE https://github.com/m7mdy9/AI 

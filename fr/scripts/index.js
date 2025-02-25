@@ -147,21 +147,26 @@ function adjustLayout() {
             el.lastElementChild.style.paddingTop = "5%"
             el.lastElementChild.style.paddingBottom = "3%"
         })
+        aiDefImgDiv.style.display = "flex"
         aiDefText.style.width = "100%";
-        aiDefImgDiv.style.width = "100%";
+        aiDefImgDiv.style.width = "95%";
         aiDefImg.style.transform = "translateY(-10rem)";
         aiDefImg.style.paddingRight = "0";
-        aiDefDiv.style.flexWrap = "wrap";
         aiDefDiv.style.justifyContent = "center";
+        aiDefDiv.style.paddingLeft = "0";
+        // aiDefImg.style.alignItems = "center";
+        aiDefDiv.style.flexWrap = "wrap";
         aiDefText.style.maxWidth = "100vw";
         aiDefP.style.paddingRight = "7.5%";
         aiDefP.style.paddingLeft = "7.5%";
         aiDefHead.style.paddingRight = "5%";
         aiDefHead.style.paddingLeft = "5%";
         aiDefDiv.style.paddingLeft = "0%";
+        aiDefImgDiv.style.justifyContent = "center";
         aiDefImgDiv.style.maxWidth = "100vw";
-        aiDefImgDiv.style.paddingRight = "5%";
-        aiDefImgDiv.style.paddingLeft = "5%";
+        aiDefImg.style.justifyContent = "center";
+        // aiDefImgDiv.style.paddingRight = "5%";
+        // aiDefImgDiv.style.paddingLeft = "5%";
         aiDefImgDiv.style.minHeight = "50vw";
         N_no_anims.style.width = "95vw"
         N_3D_Div_2.style.height = `auto`
@@ -169,7 +174,23 @@ function adjustLayout() {
             el.style.height = "60vh"
         })
         models_no_anims_1.style.height = "40vh"
+        let  width_desired
         card.forEach(el => {
+            if(el.textContent.includes("Frank Rosenblatt")){
+                width_desired = "50vw"
+            } else {
+                width_desired = "70vw"
+            }
+            const img1 = el.lastElementChild.firstElementChild
+            // if(windowWidth > 768){
+                el.lastElementChild.style.display = "flex"
+                el.lastElementChild.style.flexDirection = "column"
+                el.lastElementChild.style.justifyContent = "center"
+                el.lastElementChild.style.alignItems = "center"
+                img1.style.width = width_desired
+                img1.style.height = "auto"
+            // }
+
             el.style.width = "100%"
             el.style.left = "0"
             el.style.marginTop = "5vh"
@@ -182,6 +203,13 @@ function adjustLayout() {
             el.style = '';
         });
         card.forEach(el =>{
+            const img1 = el.lastElementChild.firstElementChild
+            el.lastElementChild.style.display = ""
+            el.lastElementChild.style.flexDirection = ""
+            el.lastElementChild.style.justifyContent = ""
+            el.lastElementChild.style.alignItems = ""
+            img1.style.width = ""
+            img1.style.height = ""
             el.style.display = ""
             el.firstElementChild.style.width = "";
             el.lastElementChild.style.width = "";
@@ -205,8 +233,8 @@ function adjustLayout() {
     }
 
     const fontSizeMap = {
-        mid_ratio: '0.85vh',
-        mid_small_ratio: '0.75vh',
+        mid_ratio: '0.95vh',
+        mid_small_ratio: '0.85vh',
         small_ratio: '0.68vh',
         tiny_ratio: '0.55vh',
         wide_ratio: '1.25vh',

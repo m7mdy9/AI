@@ -16,12 +16,14 @@ This site features multilpe things that include:
 
 - 4 Support languages (en, ar, es, fr)
 - Full mobile compatability.
+- A stylish title icon.
+- Smooth scrolling with a scroll wheel, alongside GSAP based animations that occur on load and on scrolling.
 - A small icon top right in the translated sites to go back to the language selector page.
 - Slick animations and a modern design, in new and creative ways.
-- A section where a model of an RTX disassembles as you scroll down, with the option to turn that 3D Animation off.
-- Cards that include essentional information regarding the Evolution of Artificial Intelligence.
+- A section where a model of an RTX disassembles as you scroll down, with the option to turn that 3D Animation off. (Disabled on mobile due to hardware reasons)
+- Cards that include essential information regarding the Evolution of Artificial Intelligence.
 - Pictures that fit the context.
-- Font, font sizes and colors that are easily readable, and compatable based on aspect ratio.
+- Font, font sizes and colors that are easily readable, and compatible based on aspect ratio.
 
 ## How to use/view
 
